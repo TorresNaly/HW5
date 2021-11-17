@@ -24,4 +24,5 @@ library(ggthemes)
 
 homicides <- read.csv("homicide-data.csv")
 
-baltimore_homicides <- homicides %>%
+homicides <- homicides %>%
+  unite("city_name", city:state, sep = ", ")
