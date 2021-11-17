@@ -19,10 +19,34 @@ library(purrr)
 library(ggplot2)
 library(forcats)
 library(ggthemes)
+library(lubridate)
 ```
 
+# Load the data
+```{r}
 
 homicides <- read.csv("homicide-data.csv")
 
 homicides <- homicides %>%
   unite("city_name", city:state, sep = ", ")
+```
+  
+# Just show baltimore
+```{r}
+baltimore <- homicides %>% 
+  filter(city_name == "Baltimore, MD")
+
+
+baltimore
+```
+
+# Group by month and year
+```{r}
+baltimore %>%
+  mutate(reported_date = ymd(reported_date)) %>%
+  mutate(year = year(reported_date)) %>%
+  mutate(month = month(reported_date))
+
+
+```
+
