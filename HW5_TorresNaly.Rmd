@@ -83,6 +83,7 @@ baltimore_graph <- baltimore_summary %>%
   geom_smooth(span = 0.1, color = "blue", se = FALSE, size = 1) +
   theme_dark() +
   ggtitle("Homicides in Baltimore, MD") +
+  labs(y = "Monthly homicides", x = "Date") +
   
   
 
