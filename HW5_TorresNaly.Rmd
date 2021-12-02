@@ -81,6 +81,7 @@ baltimore_graph <- baltimore_summary %>%
   annotate("text", x = ymd("2014-10-15"), y = 42, label = "Arrest of", color = "white") +
   annotate("text", x = ymd("2014-08-15"), y = 35, label = "Freddie Gray", color = "white") +
   geom_smooth(span = 0.1, color = "blue", se = FALSE, size = 1) +
+  theme_dark() +
   
   
 
