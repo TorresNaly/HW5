@@ -2,7 +2,9 @@
 title: "HW5"
 author: "Naly Torres"
 date: "11/15/2021"
-output: html_document
+output:
+  word_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -73,7 +75,7 @@ baltimore_summary
 ```
 
 # start plotting 
-```{r, fig.width= 10, fig.height=1.5}
+```{r, fig.width= 6, fig.height=3}
 baltimore_graph <- baltimore_summary %>%
   ggplot(aes(x = date, y = n)) +
   geom_col(aes(fill = cold_months)) +
@@ -88,7 +90,7 @@ baltimore_graph <- baltimore_summary %>%
   scale_fill_manual(values = c("light gray", "light blue"), name = " ", labels = c("Summer", "Winter"))
 
 
-baltimore_summary_graph
+baltimore_graph
   
   
 
