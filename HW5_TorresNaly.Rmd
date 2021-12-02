@@ -46,6 +46,7 @@ baltimore_summary <-baltimore %>%
   mutate(reported_date = ymd(reported_date)) %>%
   mutate(year = year(reported_date)) %>%
   mutate(month = month(reported_date)) %>%
+  mutate(day = day(reported_date)) %>%
   group_by(year, month) %>%
   count()
   
@@ -55,6 +56,8 @@ baltimore_summary <- baltimore_summary %>%
   mutate(date = paste(year, month, "15", sep = "-")) %>%
   mutate(date = ymd(date))
 
+baltimore_summary
+
 
 ```
 
@@ -63,6 +66,10 @@ baltimore_summary <- baltimore_summary %>%
 baltimore_summary <- baltimore_summary %>%
   mutate(cold_months = month %in% c(11, 12, 1:4)) %>%
   mutate(warm_months = month %in% c(5:10))
+
+
+baltimore_summary %>% 
+  filter(grepl("2015-04", date))
 
 baltimore_summary
 
