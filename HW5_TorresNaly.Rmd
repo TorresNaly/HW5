@@ -84,6 +84,7 @@ baltimore_graph <- baltimore_summary %>%
   theme_dark() +
   ggtitle("Homicides in Baltimore, MD") +
   labs(y = "Monthly homicides", x = "Date") +
+  theme(legend.position = "bottom") +
   
   
 
