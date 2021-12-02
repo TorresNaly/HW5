@@ -86,6 +86,9 @@ baltimore_graph <- baltimore_summary %>%
   labs(y = "Monthly homicides", x = "Date") +
   theme(legend.position = "bottom") +
   scale_fill_manual(values = c("light gray", "light blue"), name = " ", labels = c("Summer", "Winter"))
+
+
+baltimore_summary_graph
   
   
 
